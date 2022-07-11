@@ -250,7 +250,7 @@ class App {
   _renderWorkoutonList(workout) {
     let html = `
       <li class="workout workout-${workout.type}" data-id=${workout.id}>
-        <h2 class="workout-title">Running on April 14</h2>
+        <h2 class="workout-title">${workout.description}</h2>
         <div class="workout-details">
           <span class="workout-icon">${
             workout.type === 'running' ? '🏃‍♂️' : '🚴‍♂️'
@@ -334,6 +334,7 @@ class App {
     this.#workouts = data;
 
     this.#workouts.forEach(workout => {
+      console.log(workout);
       this._renderWorkoutonList(workout);
     });
   }
